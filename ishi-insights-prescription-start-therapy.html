@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Prescription Was Written. Why Didn't the Patient Start Therapy? | ISHI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{--purple:#3b275c;--deep-purple:#2b1b46;--light-purple:#9d6ad6;--cream:#fbf8f3;--teal:#23887f;--navy:#101d38;--text:#1e1e24;--muted:#6f6b78;--border:#e4deec;--cream-border:#eee4dc;--shadow:0 18px 48px rgba(60,40,90,.08)}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:"Poppins",Arial,sans-serif;color:var(--text);background:#fff;line-height:1.6} a{cursor:pointer}
+    .top-nav{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 64px;background:var(--cream);border-bottom:1px solid #e7e0d8;position:sticky;top:0;z-index:50;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+    .logo-img{height:54px;width:auto;display:block}.nav-links{display:flex;gap:28px;align-items:center;font-size:15px;font-weight:500}.nav-links a{text-decoration:none;color:#2c2434}.nav-links a.active{color:#7b4fc4;font-weight:800}.nav-cta{background:#7b52b3;color:white!important;padding:13px 24px;border-radius:999px;font-weight:700}
+    .inner{max-width:1180px;margin:0 auto}.eyebrow,.label,.mini-label{text-transform:uppercase;letter-spacing:.12em;font-size:13px;font-weight:800;color:var(--light-purple)}
+    h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:58px;line-height:1.05;margin:0 0 24px;letter-spacing:-1px;font-weight:600;color:var(--deep-purple)}
+    h2{font-family:"Cormorant Garamond",Georgia,serif;font-size:52px;line-height:1.04;margin:0 0 20px;color:var(--text);font-weight:600}
+    h3{margin:0 0 10px;font-size:23px;line-height:1.22;color:var(--purple);font-weight:800} p{margin:0}
+    .btn{padding:14px 24px;border-radius:999px;font-weight:700;text-decoration:none;display:inline-block;font-size:15px;transition:transform .18s ease}.btn:hover{transform:translateY(-1px)}.btn-primary{background:var(--purple);color:#fff}.btn-white{background:#fff;color:var(--purple)}.btn-outline{border:1px solid var(--border);color:var(--purple);background:#fff}
+    .hero{background:var(--cream);padding:90px 64px 76px;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:74px;align-items:center}.hero .eyebrow{margin-bottom:18px}.hero-copy p{font-size:20px;line-height:1.5;color:#40384a;max-width:720px;margin:0 0 34px}.buttons{display:flex;gap:16px;flex-wrap:wrap}
+    .hero-visual{position:relative;min-height:470px}.rings{position:absolute;right:-190px;top:-32px;width:760px;height:760px;z-index:1;opacity:.95;pointer-events:none}.rings img{width:100%;height:100%;object-fit:contain;display:block}.hero-card{position:absolute;right:38px;top:82px;z-index:2;width:510px;border-radius:34px;background:white;padding:34px;box-shadow:0 28px 70px rgba(60,40,90,.16);border:1px solid rgba(255,255,255,.8)}.hero-card h3{font-size:30px;margin-bottom:14px}.hero-card p{color:var(--muted);font-size:16px;line-height:1.55;margin-bottom:22px}.hero-accent{position:absolute;right:6px;top:64px;width:84px;height:84px;border-radius:50%;background:var(--teal);z-index:3;box-shadow:0 18px 44px rgba(35,136,127,.25)}.hero-accent:after{content:"";position:absolute;inset:26px;border:3px solid rgba(255,255,255,.86);border-radius:50%}
+    .page{padding:78px 64px 92px;background:#fff}.content-layout{display:grid;grid-template-columns:minmax(0,760px) 320px;gap:70px;align-items:start}.article-body{font-size:18px;color:#383241}.article-body p{margin:0 0 22px}.article-body h2{margin-top:62px}.intro-paragraph{font-size:22px;color:#40384a;line-height:1.55;margin-bottom:32px!important}
+    .pullquote{background:var(--cream);border-left:5px solid var(--light-purple);padding:24px 28px;margin:36px 0;border-radius:0 24px 24px 0;color:var(--purple);font-weight:800;font-size:20px}
+    .list-box{background:var(--cream);border:1px solid var(--cream-border);border-radius:30px;padding:30px;margin:36px 0}.list-box ul{margin:0;padding-left:20px;color:var(--muted);font-size:16px}.list-box li{margin-bottom:10px}
+    .emphasis-box{background:radial-gradient(circle at 88% 12%,rgba(143,107,200,.20),transparent 32%),linear-gradient(135deg,var(--deep-purple),#4d3473);color:#fff;border-radius:30px;padding:34px;margin:46px 0;box-shadow:0 24px 70px rgba(60,40,90,.16)}.emphasis-box h3{color:#fff;font-size:30px;margin-bottom:18px}.emphasis-box p{color:#eee7f8;margin-bottom:0}
+    .further-reading{border:1px solid var(--border);border-radius:30px;padding:30px;margin:48px 0 0;box-shadow:var(--shadow);background:#fff}.further-reading p{color:var(--muted);font-size:16px}.further-reading a{color:var(--purple);font-weight:800;text-decoration:none;overflow-wrap:anywhere}
+    .article-cta{background:var(--navy);color:#fff;border-radius:30px;padding:34px;margin-top:48px}.article-cta h3{color:#fff;font-size:30px}.article-cta p{color:#dbe3f2;font-size:16px;margin-bottom:24px}
+    .sidebar{position:sticky;top:112px;display:grid;gap:22px}.sidebar-card{background:var(--cream);border:1px solid var(--cream-border);border-radius:26px;padding:26px;box-shadow:var(--shadow)}.sidebar-card.white{background:#fff;border-color:var(--border)}.sidebar-card h3{font-size:22px;margin-bottom:14px}.sidebar-card p{color:var(--muted);font-size:14px;margin-bottom:18px}.sidebar-links{list-style:none;padding:0;margin:0;display:grid;gap:11px}.sidebar-links a{color:var(--purple);text-decoration:none;font-size:14px;font-weight:700}.sidebar-links a:before{content:"→";color:var(--light-purple);margin-right:7px}
+    .related-section{background:var(--cream);padding:82px 64px}.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}.related-card{background:#fff;border:1px solid var(--cream-border);border-radius:28px;padding:28px;box-shadow:var(--shadow)}.related-card p{color:var(--muted);font-size:15px;margin-bottom:22px}
+    .final-cta{background:radial-gradient(circle at 80% 20%,rgba(143,107,200,.42),transparent 30%),linear-gradient(135deg,var(--purple),#2f214a);color:#fff;text-align:center;padding:84px 64px}.final-cta h2{color:#fff;margin-bottom:22px}.final-cta p{color:#eee7f8;font-size:20px;margin:0 auto 32px;max-width:850px}
+    @media(max-width:980px){.top-nav,.hero,.page,.related-section,.final-cta{padding-left:24px;padding-right:24px}.hero-grid,.content-layout,.related-grid{grid-template-columns:1fr}.hero-visual{min-height:430px;margin-top:30px}.rings{right:-180px;top:-30px;width:580px;height:580px}.hero-card{right:0;left:0;top:70px;width:100%}.hero-accent{right:8px;top:40px;width:68px;height:68px}.hero-accent:after{inset:21px}.sidebar{position:static}h1{font-size:42px;line-height:1.08}h2{font-size:40px}.nav-links{display:none}}
+  </style>
+</head>
+
+<body>
+  <nav class="top-nav">
+    <img class="logo-img" src="ISHI Logo.svg" alt="ISHI logo">
+    <div class="nav-links">
+      <a href="#">For Patients</a><a href="#">For Clinical Partners</a><a class="active" href="/resources">Resource Center</a><a href="#">About ISHI</a><a href="#">Log In</a><a class="nav-cta" href="#">Contact Us</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="inner hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">Insights</div>
+        <h1>The Prescription Was Written. Why Didn't the Patient Start Therapy?</h1>
+        <p>The gap between clinical intent and clinical reality remains one of the largest opportunities in cardiovascular care.</p>
+        <div class="buttons">
+          <a class="btn btn-primary" href="#article">Read Article</a>
+          <a class="btn btn-outline" href="/resources/asm/what-is-asm">Explore ASM</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="rings"><img src="Green Circle.png" alt=""></div>
+        <div class="hero-card">
+          <div class="mini-label">Core Theme</div>
+          <h3>Innovation creates possibility. Execution creates outcomes.</h3>
+          <p>New therapies, procedures, guidelines, and evidence only improve outcomes when patients can access and follow through on treatment.</p>
+        </div>
+        <div class="hero-accent"></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="page" id="article">
+    <div class="inner content-layout">
+      <article class="article-body">
+        <p class="intro-paragraph">Modern cardiology has no shortage of innovation.</p>
+
+        <p>New therapies continue to improve outcomes across cardiovascular disease. Guideline-directed medical therapy has never been stronger. Clinicians have access to more evidence, more tools, and more treatment options than ever before.</p>
+
+        <p>The challenge is no longer discovering what works.</p>
+
+        <p>The challenge is making sure patients actually receive the benefits of those therapies.</p>
+
+        <p>Every day, prescriptions are written but never filled. Medications are started but never continued. Treatment plans are created but never fully executed.</p>
+
+        <div class="pullquote">The gap between clinical intent and clinical reality remains one of the largest opportunities in cardiovascular care.</div>
+
+        <h2 id="hidden-failure-point">The Hidden Failure Point in Specialty Care</h2>
+
+        <p>Most cardiovascular treatment plans depend on what happens after the patient leaves the clinic.</p>
+
+        <p>A physician may prescribe an SGLT2 inhibitor, recommend a GLP-1 therapy, initiate anticoagulation, adjust heart failure medications, or refer a patient for a structural heart intervention.</p>
+
+        <p>Yet none of those decisions improve outcomes unless they are successfully carried out.</p>
+
+        <p>Between visits, patients encounter barriers that providers often never see:</p>
+
+        <div class="list-box">
+          <ul>
+            <li>Prior authorization requirements</li>
+            <li>Cost and affordability concerns</li>
+            <li>Pharmacy delays</li>
+            <li>Transportation limitations</li>
+            <li>Confusion about medication instructions</li>
+            <li>Fear of side effects</li>
+            <li>Lack of follow-up support</li>
+          </ul>
+        </div>
+
+        <p>The result is a simple but costly reality:</p>
+
+        <p>Many patients never begin the therapies that were intended to help them.</p>
+
+        <h2 id="access">Why Access Is Still a Clinical Problem</h2>
+
+        <p>Medication access remains one of the largest barriers to effective cardiovascular care.</p>
+
+        <p>Prior authorizations, formulary restrictions, affordability concerns, pharmacy delays, and patient confusion can all prevent therapy initiation.</p>
+
+        <p>Recent discussions around direct-to-patient drug programs highlight how significant these barriers have become. Pharmaceutical manufacturers are increasingly exploring alternative pathways to help patients access medications because traditional distribution channels often create delays that interfere with care delivery. While these programs may improve access for some patients, they also introduce new complexities around affordability, care coordination, and long-term management.</p>
+
+        <p>As Cardiovascular Business recently noted in its analysis of direct-to-patient medication programs, the healthcare industry continues to explore new approaches for reducing barriers between prescription and therapy initiation. The growing interest in these models reflects a broader reality: access remains one of the most significant obstacles to successful treatment execution.</p>
+
+        <p>The larger point is not whether one access model is better than another.</p>
+
+        <p>The larger point is that medication access itself has become a clinical workflow challenge.</p>
+
+        <div class="pullquote">When access breaks down, treatment breaks down.</div>
+
+        <h2 id="beyond-access">The Problem Extends Beyond Medication Access</h2>
+
+        <p>Even when patients obtain therapy, execution challenges continue.</p>
+
+        <p>Heart failure medications require titration.</p>
+
+        <p>Anticoagulation requires monitoring.</p>
+
+        <p>Chronic disease management requires reinforcement, education, and follow-up.</p>
+
+        <p>Patients often need multiple touchpoints between visits to remain engaged and adherent.</p>
+
+        <p>Yet specialty practices are facing growing patient volumes, increasing clinical complexity, staffing shortages, and limited physician capacity.</p>
+
+        <p>The reality is that many care teams simply do not have the operational bandwidth to support every patient between visits.</p>
+
+        <p>As a result, treatment plans stall.</p>
+
+        <p>Not because clinicians made the wrong decision.</p>
+
+        <p>Because healthcare lacks reliable systems for carrying those decisions forward.</p>
+
+        <h2 id="innovation">Every Breakthrough Makes Execution More Important</h2>
+
+        <p>The pace of cardiovascular innovation continues to accelerate.</p>
+
+        <p>New therapies and interventions offer tremendous potential:</p>
+
+        <div class="list-box">
+          <ul>
+            <li>GLP-1 receptor agonists</li>
+            <li>SGLT2 inhibitors</li>
+            <li>PCSK9 inhibitors</li>
+            <li>Novel anticoagulants</li>
+            <li>Structural heart interventions</li>
+            <li>Advanced heart failure therapies</li>
+          </ul>
+        </div>
+
+        <p>Each breakthrough creates new opportunities for improving outcomes.</p>
+
+        <p>But each breakthrough also increases the importance of execution.</p>
+
+        <p>The more sophisticated treatment becomes, the more important it is to ensure patients actually start therapy, remain engaged, and reach therapeutic goals.</p>
+
+        <div class="emphasis-box">
+          <h3>Innovation creates possibility. Execution creates outcomes.</h3>
+          <p>The next cardiovascular breakthrough will only matter if healthcare organizations can help patients access it, start it, and stay on it.</p>
+        </div>
+
+        <h2 id="closing-gap">Closing the Gap Between Clinical Intent and Clinical Reality</h2>
+
+        <p>The future of specialty care will not be defined solely by new therapies.</p>
+
+        <p>It will be defined by the systems and care models that ensure those therapies are consistently delivered.</p>
+
+        <p>Healthcare organizations that succeed will be those that can extend care beyond the visit, support patients longitudinally, and create reliable processes for executing treatment plans.</p>
+
+        <p>The greatest opportunity in specialty care is not finding better therapies.</p>
+
+        <p>It is ensuring patients receive the full benefit of the therapies that already exist.</p>
+
+        <p>That opportunity lives between visits.</p>
+
+        <div class="further-reading" id="further-reading">
+          <div class="mini-label">Further Reading</div>
+          <h3>Exploring the Pros and Cons of Direct-to-Patient Drug Programs</h3>
+          <p>Cardiovascular Business examines emerging direct-to-patient pharmaceutical distribution models and the opportunities and challenges they create for patients, providers, and manufacturers.</p>
+          <p><a href="https://cardiovascularbusiness.com/topics/clinical/pharmaceutics/exploring-pros-and-cons-direct-patient-drug-programs" target="_blank" rel="noopener">Read the Cardiovascular Business article</a></p>
+        </div>
+
+        <div class="article-cta">
+          <h3>Explore the Ambulatory Specialty Model</h3>
+          <p>Learn how ASM helps specialty practices close the gap between clinical intent and care execution between visits.</p>
+          <a class="btn btn-white" href="/resources/asm/what-is-asm">What Is ASM?</a>
+        </div>
+      </article>
+
+      <aside class="sidebar">
+        <div class="sidebar-card">
+          <div class="label">Insight Article</div>
+          <h3>Execution Gap</h3>
+          <p>A perspective on medication access, treatment initiation, and why specialty care outcomes increasingly depend on what happens after the visit.</p>
+        </div>
+
+        <div class="sidebar-card white">
+          <h3>In This Article</h3>
+          <ul class="sidebar-links">
+            <li><a href="#hidden-failure-point">Hidden Failure Point</a></li>
+            <li><a href="#access">Medication Access</a></li>
+            <li><a href="#beyond-access">Beyond Access</a></li>
+            <li><a href="#innovation">Cardiovascular Innovation</a></li>
+            <li><a href="#closing-gap">Closing the Gap</a></li>
+            <li><a href="#further-reading">Further Reading</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card white">
+          <h3>Related Resources</h3>
+          <ul class="sidebar-links">
+            <li><a href="/resources/asm/what-is-asm">What Is ASM?</a></li>
+            <li><a href="/resources/evidence/clinical-evidence-brief">Clinical Evidence Brief</a></li>
+            <li><a href="/resources/evidence/case-studies/executing-heart-failure-care-between-visits">Heart Failure Case Study</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <section class="related-section">
+    <div class="inner">
+      <div class="label">Related Resources</div>
+      <h2>Continue Exploring Specialty Care Delivery</h2>
+      <div class="related-grid">
+        <article class="related-card"><div class="mini-label">ASM Resource Center</div><h3>Specialty Care Was Never Designed for What Happens Between Visits</h3><p>Learn how ASM helps execute specialty care plans consistently after the visit ends.</p><a class="btn btn-outline" href="/resources/asm/what-is-asm">Read Article</a></article>
+        <article class="related-card"><div class="mini-label">Clinical Evidence Brief</div><h3>Transforming Heart Failure Care Through Active Clinical Management Between Visits</h3><p>Explore the care model and clinical rationale behind active management between visits.</p><a class="btn btn-outline" href="/resources/evidence/clinical-evidence-brief">Read Evidence Brief</a></article>
+        <article class="related-card"><div class="mini-label">Clinical Case Study</div><h3>Executing Heart Failure Care Between Visits</h3><p>See how ISHI supported heart failure patients through protocol-driven care delivery between visits.</p><a class="btn btn-outline" href="/resources/evidence/case-studies/executing-heart-failure-care-between-visits">Read Case Study</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="inner">
+      <h2>Ready to Close the Gap Between Visits?</h2>
+      <p>Learn how ISHI helps cardiovascular practices deliver more consistent, proactive care for complex patients.</p>
+      <a class="btn btn-white" href="/contact">Contact ISHI</a>
+    </div>
+  </section>
+</body>
+</html>

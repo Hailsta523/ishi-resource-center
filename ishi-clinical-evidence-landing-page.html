@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clinical Evidence | ISHI Resource Center</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{--purple:#3b275c;--deep-purple:#2b1b46;--light-purple:#9d6ad6;--cream:#fbf8f3;--teal:#23887f;--navy:#101d38;--text:#1e1e24;--muted:#6f6b78;--border:#e4deec;--cream-border:#eee4dc;--shadow:0 18px 48px rgba(60,40,90,.08)}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:"Poppins",Arial,sans-serif;color:var(--text);background:#fff;line-height:1.6} a{cursor:pointer}
+    .top-nav{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 64px;background:var(--cream);border-bottom:1px solid #e7e0d8;position:sticky;top:0;z-index:50;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+    .logo-img{height:54px;width:auto;display:block}.nav-links{display:flex;gap:28px;align-items:center;font-size:15px;font-weight:500}.nav-links a{text-decoration:none;color:#2c2434}.nav-links a.active{color:#7b4fc4;font-weight:800}.nav-cta{background:#7b52b3;color:white!important;padding:13px 24px;border-radius:999px;font-weight:700}
+    .inner{max-width:1180px;margin:0 auto}.eyebrow,.label,.mini-label{text-transform:uppercase;letter-spacing:.12em;font-size:13px;font-weight:800;color:var(--light-purple)}
+    h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:58px;line-height:1.05;margin:0 0 24px;letter-spacing:-1px;font-weight:600;color:var(--deep-purple)}
+    h2{font-family:"Cormorant Garamond",Georgia,serif;font-size:52px;line-height:1.04;margin:0 0 20px;color:var(--text);font-weight:600}
+    h3{margin:0 0 10px;font-size:23px;line-height:1.22;color:var(--purple);font-weight:800} p{margin:0}
+    .lead{font-size:20px;color:var(--muted);max-width:900px}
+    .btn{padding:14px 24px;border-radius:999px;font-weight:700;text-decoration:none;display:inline-block;font-size:15px;transition:transform .18s ease}.btn:hover{transform:translateY(-1px)}.btn-primary{background:var(--purple);color:#fff}.btn-white{background:#fff;color:var(--purple)}.btn-outline{border:1px solid var(--border);color:var(--purple);background:#fff}
+    .hero{background:var(--cream);padding:90px 64px 76px;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:74px;align-items:center}.hero .eyebrow{margin-bottom:18px}.hero-copy p{font-size:20px;line-height:1.5;color:#40384a;max-width:720px;margin:0 0 34px}.buttons{display:flex;gap:16px;flex-wrap:wrap}
+    .hero-visual{position:relative;min-height:430px}.rings{position:absolute;right:-220px;top:-72px;width:820px;height:820px;z-index:1;opacity:.95;pointer-events:none}.rings img{width:100%;height:100%;object-fit:contain;display:block}
+    .hero-card{position:absolute;right:40px;top:92px;z-index:2;width:500px;border-radius:34px;background:#fff;padding:34px;box-shadow:0 28px 70px rgba(60,40,90,.16);border:1px solid rgba(255,255,255,.8)}
+    .hero-card h3{font-size:30px;margin-bottom:14px}.hero-card p{color:var(--muted);font-size:16px;line-height:1.55;margin-bottom:22px}.hero-card .stat-line{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px}.hero-stat{border-top:1px solid var(--border);padding-top:14px}.hero-stat strong{display:block;color:var(--purple);font-size:28px;line-height:1}.hero-stat span{color:var(--muted);font-size:13px;font-weight:700}
+    .hero-accent{position:absolute;right:6px;top:64px;width:84px;height:84px;border-radius:50%;background:var(--teal);z-index:3;box-shadow:0 18px 44px rgba(35,136,127,.25)}.hero-accent:after{content:"";position:absolute;inset:26px;border:3px solid rgba(255,255,255,.86);border-radius:50%}
+    .section{padding:82px 64px}.featured{background:#fff}.featured-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:24px;align-items:stretch;margin-top:42px}
+    .primary-card{background:radial-gradient(circle at 88% 12%,rgba(143,107,200,.20),transparent 32%),linear-gradient(135deg,var(--deep-purple),#4d3473);color:#fff;border-radius:34px;padding:38px;display:flex;flex-direction:column;justify-content:space-between;min-height:430px;box-shadow:0 24px 70px rgba(60,40,90,.16)}
+    .primary-card h3{color:#fff;font-size:38px;margin-bottom:18px}.primary-card p{color:#eee7f8;font-size:17px;margin-bottom:28px}.primary-card .mini-label{color:#b784eb;margin-bottom:18px}
+    .side-stack{display:grid;gap:24px}.resource-card{background:#fff;border:1px solid var(--border);border-radius:28px;padding:30px;box-shadow:var(--shadow)}.resource-card p{color:var(--muted);font-size:15px;margin-bottom:24px}
+    .metrics-band{background:var(--navy);color:#fff}.metrics-band h2{color:#fff}.metrics-band .lead{color:#dbe3f2}.metrics-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:42px}.metric{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:24px;min-height:132px}.metric strong{display:block;color:#fff;font-size:36px;line-height:1;margin-bottom:12px;font-weight:800}.metric span{display:block;color:#dbe3f2;font-size:13px;line-height:1.35}
+    .proof{background:var(--cream)}.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}.proof-card{background:#fff;border:1px solid var(--cream-border);border-radius:28px;padding:28px;box-shadow:var(--shadow)}.proof-card p{color:var(--muted);font-size:15px}
+    .resources{background:#fff}.resource-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}.tile{background:#fff;border:1px solid var(--border);border-radius:28px;padding:30px;box-shadow:var(--shadow);display:flex;flex-direction:column;min-height:330px}.tile p{color:var(--muted);font-size:15px;margin-bottom:24px}.tile .actions{margin-top:auto}.tile.coming{background:#faf7fc;border:1px dashed #d8cae8}.tile.coming h3{color:#7b678f}
+    .related-section{background:var(--cream);padding:82px 64px}.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}.related-card{background:#fff;border:1px solid var(--cream-border);border-radius:28px;padding:28px;box-shadow:var(--shadow)}.related-card p{color:var(--muted);font-size:15px;margin-bottom:22px}
+    .final-cta{background:radial-gradient(circle at 80% 20%,rgba(143,107,200,.42),transparent 30%),linear-gradient(135deg,var(--purple),#2f214a);color:#fff;text-align:center;padding:84px 64px}.final-cta h2{color:#fff;margin-bottom:22px}.final-cta p{color:#eee7f8;font-size:20px;margin:0 auto 32px;max-width:850px}
+    @media(max-width:980px){.top-nav,.hero,.section,.related-section,.final-cta{padding-left:24px;padding-right:24px}.hero-grid,.featured-grid,.metrics-grid,.proof-grid,.resource-grid,.related-grid{grid-template-columns:1fr}.hero-visual{min-height:430px;margin-top:30px}.rings{right:-200px;top:-60px;width:620px;height:620px}.hero-card{right:0;left:0;top:70px;width:100%}.hero-accent{right:8px;top:40px;width:68px;height:68px}.hero-accent:after{inset:21px}h1{font-size:42px;line-height:1.08}h2{font-size:40px}.nav-links{display:none}}
+  </style>
+</head>
+
+<body>
+  <nav class="top-nav">
+    <img class="logo-img" src="ISHI Logo.svg" alt="ISHI logo">
+    <div class="nav-links">
+      <a href="#">For Patients</a><a href="#">For Clinical Partners</a><a class="active" href="/resources">Resource Center</a><a href="#">About ISHI</a><a href="#">Log In</a><a class="nav-cta" href="#">Contact Us</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="inner hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">Clinical Evidence</div>
+        <h1>Evidence for Care Between Visits</h1>
+        <p>Clinical evidence, case studies, and operational results demonstrating how structured care delivery can improve execution between specialty visits.</p>
+        <div class="buttons">
+          <a class="btn btn-primary" href="/resources/evidence/clinical-evidence-brief">Read Evidence Brief</a>
+          <a class="btn btn-outline" href="/resources/evidence/case-studies/executing-heart-failure-care-between-visits">View Case Study</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="rings"><img src="Green Circle.png" alt=""></div>
+        <div class="hero-card">
+          <div class="mini-label">Featured Outcomes</div>
+          <h3>Structured execution can extend specialty care beyond the clinic.</h3>
+          <p>Early evidence from ISHI-supported heart failure populations demonstrates improved therapy optimization, rapid clinical response, and reduced physician workload.</p>
+          <div class="stat-line">
+            <div class="hero-stat"><strong>747</strong><span>patients evaluated</span></div>
+            <div class="hero-stat"><strong>2,013</strong><span>alerts managed</span></div>
+          </div>
+        </div>
+        <div class="hero-accent"></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section featured">
+    <div class="inner">
+      <div class="label">Featured Evidence</div>
+      <h2>Start with the clinical foundation</h2>
+      <p class="lead">Begin with the Clinical Evidence Brief, then review the case study showing how protocol-driven heart failure care can be executed at meaningful volume between visits.</p>
+
+      <div class="featured-grid">
+        <article class="primary-card">
+          <div>
+            <div class="mini-label">Clinical Evidence Brief</div>
+            <h3>Transforming Heart Failure Care Through Active Clinical Management Between Visits</h3>
+            <p>Explore the clinical problem, limitations of existing care models, and the operational framework ISHI uses to support active management between visits.</p>
+          </div>
+          <div>
+            <a class="btn btn-white" href="/resources/evidence/clinical-evidence-brief">Read Evidence Brief</a>
+          </div>
+        </article>
+
+        <div class="side-stack">
+          <article class="resource-card">
+            <div class="mini-label">Clinical Case Study</div>
+            <h3>Executing Heart Failure Care Between Visits</h3>
+            <p>See how ISHI supported 747 heart failure patients, managed more than 2,000 clinical alerts, and improved therapy optimization without increasing physician workload.</p>
+            <a class="btn btn-outline" href="/resources/evidence/case-studies/executing-heart-failure-care-between-visits">Read Case Study</a>
+          </article>
+
+          <article class="resource-card">
+            <div class="mini-label">Downloadable Summary</div>
+            <h3>Clinical Case Study Summary</h3>
+            <p>Download the concise clinical version with methods, results, conclusion, and limitations.</p>
+            <a class="btn btn-outline" href="ISHI Case Study - Clinical Version.pdf">Download Summary</a>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section metrics-band">
+    <div class="inner">
+      <div class="label">Clinical and Operational Results</div>
+      <h2>Heart failure care executed at scale</h2>
+      <p class="lead">In a real-world evaluation across community cardiology practices, ISHI demonstrated that structured virtual care workflows can support high-volume intervention without increasing cardiologist burden.</p>
+
+      <div class="metrics-grid">
+        <div class="metric"><strong>747</strong><span>Heart failure patients included in evaluation</span></div>
+        <div class="metric"><strong>2,013</strong><span>Clinical alerts managed through structured workflows</span></div>
+        <div class="metric"><strong>99%</strong><span>Clinical alerts addressed within 48 hours</span></div>
+        <div class="metric"><strong>81%</strong><span>Alerts handled by nursing staff</span></div>
+        <div class="metric"><strong>0%</strong><span>Escalated to community cardiologists</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section proof">
+    <div class="inner">
+      <div class="label">What the Evidence Shows</div>
+      <h2>From visibility to execution</h2>
+      <p class="lead">Remote monitoring, telehealth, and care management programs can improve access to information. The evidence focus for ISHI is whether care plans are consistently acted on between visits.</p>
+
+      <div class="proof-grid">
+        <article class="proof-card">
+          <div class="mini-label">Therapy Optimization</div>
+          <h3>Improved GDMT utilization</h3>
+          <p>Protocol-driven care supported improvement across GDMT therapy classes, including beta-blockers, ACEi/ARB/ARNI, SGLT2 inhibitors, and MRA.</p>
+        </article>
+
+        <article class="proof-card">
+          <div class="mini-label">Clinical Responsiveness</div>
+          <h3>Rapid alert management</h3>
+          <p>Clinical alerts were managed at volume, with 99% addressed within 48 hours through structured escalation pathways.</p>
+        </article>
+
+        <article class="proof-card">
+          <div class="mini-label">Operational Viability</div>
+          <h3>No added cardiologist burden</h3>
+          <p>The majority of alerts were handled by nursing staff, with no escalation required to community cardiologists in the evaluation.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section resources">
+    <div class="inner">
+      <div class="label">Clinical Evidence Resources</div>
+      <h2>Available resources</h2>
+      <p class="lead">Use these resources to understand the clinical rationale, care delivery model, and real-world outcomes behind ISHI's approach to active management between visits.</p>
+
+      <div class="resource-grid">
+        <article class="tile">
+          <div class="mini-label">Evidence Brief</div>
+          <h3>Transforming Heart Failure Care Through Active Clinical Management Between Visits</h3>
+          <p>A web-based evidence brief explaining the clinical problem, the missing layer in current care models, and the ISHI care model.</p>
+          <div class="actions">
+            <a class="btn btn-outline" href="/resources/evidence/clinical-evidence-brief">Read Evidence Brief</a>
+          </div>
+        </article>
+
+        <article class="tile">
+          <div class="mini-label">Case Study</div>
+          <h3>Executing Heart Failure Care Between Visits</h3>
+          <p>A real-world case study demonstrating GDMT improvement, alert management, and scalable intervention between visits.</p>
+          <div class="actions">
+            <a class="btn btn-outline" href="/resources/evidence/case-studies/executing-heart-failure-care-between-visits">Read Case Study</a>
+          </div>
+        </article>
+
+        <article class="tile coming">
+          <div class="mini-label">Coming Soon</div>
+          <h3>Additional Clinical Outcomes</h3>
+          <p>Future evidence resources will include additional outcomes, validation studies, program performance benchmarks, and publications.</p>
+          <div class="actions">
+            <a class="btn btn-outline" href="/resources">Resource Center</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="related-section">
+    <div class="inner">
+      <div class="label">Continue Exploring</div>
+      <h2>Evidence in context</h2>
+      <p class="lead">Clinical evidence is one part of the broader ISHI Resource Center. Explore the ASM framework and insights that explain why execution between visits matters.</p>
+
+      <div class="related-grid">
+        <article class="related-card">
+          <div class="mini-label">ASM Resource Center</div>
+          <h3>What Is ASM?</h3>
+          <p>Learn how the Ambulatory Specialty Model helps specialty practices execute care plans consistently between visits.</p>
+          <a class="btn btn-outline" href="/resources/asm/what-is-asm">Read Article</a>
+        </article>
+
+        <article class="related-card">
+          <div class="mini-label">Insights</div>
+          <h3>The Prescription Was Written. Why Didn't the Patient Start Therapy?</h3>
+          <p>Explore why the gap between clinical intent and clinical reality remains one of the largest opportunities in cardiovascular care.</p>
+          <a class="btn btn-outline" href="/resources/insights/the-prescription-was-written">Read Article</a>
+        </article>
+
+        <article class="related-card">
+          <div class="mini-label">Resource Center</div>
+          <h3>Explore All Resources</h3>
+          <p>Browse ASM education, clinical evidence, case studies, and insights from the full ISHI Resource Center.</p>
+          <a class="btn btn-outline" href="/resources">Resource Center</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="inner">
+      <h2>Ready to Review the Evidence?</h2>
+      <p>Start with the Clinical Evidence Brief or review the heart failure case study to see how structured care delivery can support execution between visits.</p>
+      <a class="btn btn-white" href="/resources/evidence/clinical-evidence-brief">Read Evidence Brief</a>
+    </div>
+  </section>
+</body>
+</html>

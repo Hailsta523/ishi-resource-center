@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clinical Evidence Brief | ISHI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{--purple:#3b275c;--deep-purple:#2b1b46;--light-purple:#9d6ad6;--cream:#fbf8f3;--teal:#23887f;--navy:#101d38;--text:#1e1e24;--muted:#6f6b78;--border:#e4deec;--cream-border:#eee4dc;--shadow:0 18px 48px rgba(60,40,90,.08)}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:"Poppins",Arial,sans-serif;color:var(--text);background:#fff;line-height:1.6} a{cursor:pointer}
+    .top-nav{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 64px;background:var(--cream);border-bottom:1px solid #e7e0d8;position:sticky;top:0;z-index:50;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+    .logo-img{height:54px;width:auto;display:block}.nav-links{display:flex;gap:28px;align-items:center;font-size:15px;font-weight:500}.nav-links a{text-decoration:none;color:#2c2434}.nav-links a.active{color:#7b4fc4;font-weight:800}.nav-cta{background:#7b52b3;color:white!important;padding:13px 24px;border-radius:999px;font-weight:700}
+    .inner{max-width:1180px;margin:0 auto}.eyebrow,.label,.mini-label{text-transform:uppercase;letter-spacing:.12em;font-size:13px;font-weight:800;color:var(--light-purple)}
+    h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:64px;line-height:1.02;margin:0 0 24px;letter-spacing:-1px;font-weight:600;color:var(--deep-purple)}
+    h2{font-family:"Cormorant Garamond",Georgia,serif;font-size:52px;line-height:1.04;margin:0 0 20px;color:var(--text);font-weight:600}
+    h3{margin:0 0 10px;font-size:23px;line-height:1.22;color:var(--purple);font-weight:800} p{margin:0}
+    .btn{padding:14px 24px;border-radius:999px;font-weight:700;text-decoration:none;display:inline-block;font-size:15px;transition:transform .18s ease}.btn:hover{transform:translateY(-1px)}.btn-primary{background:var(--purple);color:#fff}.btn-white{background:#fff;color:var(--purple)}.btn-outline{border:1px solid var(--border);color:var(--purple);background:#fff}
+    .hero{background:var(--cream);padding:90px 64px 76px;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:74px;align-items:center}.hero .eyebrow{margin-bottom:18px}.hero-copy p{font-size:22px;line-height:1.5;color:#40384a;max-width:720px;margin:0 0 34px}.buttons{display:flex;gap:16px;flex-wrap:wrap}
+    .hero-visual{position:relative;min-height:470px}.rings{position:absolute;right:-190px;top:-32px;width:760px;height:760px;z-index:1;opacity:.95;pointer-events:none}.rings img{width:100%;height:100%;object-fit:contain;display:block}.hero-photo{position:absolute;right:40px;top:92px;z-index:2;width:520px;height:305px;border-radius:34px;overflow:hidden;box-shadow:0 28px 70px rgba(60,40,90,.16);border:1px solid rgba(255,255,255,.7);background:#fff}.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}.hero-accent{position:absolute;right:6px;top:64px;width:84px;height:84px;border-radius:50%;background:var(--teal);z-index:3;box-shadow:0 18px 44px rgba(35,136,127,.25)}.hero-accent:after{content:"";position:absolute;inset:26px;border:3px solid rgba(255,255,255,.86);border-radius:50%}
+    .takeaways{padding:72px 64px;background:#fff}.takeaway-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:34px}.takeaway{background:#fff;border:1px solid var(--border);border-radius:26px;padding:24px;box-shadow:var(--shadow)}.takeaway p{color:var(--muted);font-size:14px;line-height:1.55}
+    .page{padding:78px 64px 92px;background:#fff}.content-layout{display:grid;grid-template-columns:minmax(0,760px) 320px;gap:70px;align-items:start}.article-body{font-size:18px;color:#383241}.article-body p{margin:0 0 22px}.article-body h2{margin-top:62px}.intro-paragraph{font-size:22px;color:#40384a;line-height:1.55;margin-bottom:32px!important}
+    .quote-box{background:var(--cream);border-left:5px solid var(--light-purple);padding:24px 28px;margin:36px 0;border-radius:0 24px 24px 0;color:var(--purple);font-weight:800;font-size:20px}
+    .emphasis-box{background:radial-gradient(circle at 88% 12%,rgba(143,107,200,.20),transparent 32%),linear-gradient(135deg,var(--deep-purple),#4d3473);color:#fff;border-radius:30px;padding:34px;margin:46px 0;box-shadow:0 24px 70px rgba(60,40,90,.16)}.emphasis-box h3{color:#fff;font-size:30px;margin-bottom:18px}.emphasis-box p{color:#eee7f8;margin-bottom:0}
+    .component-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin:28px 0 10px}.component-card{border:1px solid var(--border);border-radius:24px;padding:24px;box-shadow:var(--shadow);background:#fff}.component-card p{color:var(--muted);font-size:16px;margin:0}
+    .impact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:28px 0 10px}.impact-card{background:var(--cream);border:1px solid var(--cream-border);border-radius:24px;padding:24px}.impact-card ul{margin:14px 0 0;padding-left:20px;color:var(--muted);font-size:15px}.impact-card li{margin-bottom:10px}
+    .article-cta{background:var(--navy);color:#fff;border-radius:30px;padding:34px;margin-top:48px}.article-cta h3{color:#fff;font-size:30px}.article-cta p{color:#dbe3f2;font-size:16px;margin-bottom:24px}
+    .sidebar{position:sticky;top:112px;display:grid;gap:22px}.sidebar-card{background:var(--cream);border:1px solid var(--cream-border);border-radius:26px;padding:26px;box-shadow:var(--shadow)}.sidebar-card.white{background:#fff;border-color:var(--border)}.sidebar-card h3{font-size:22px;margin-bottom:14px}.sidebar-card p{color:var(--muted);font-size:14px;margin-bottom:18px}.sidebar-links{list-style:none;padding:0;margin:0;display:grid;gap:11px}.sidebar-links a{color:var(--purple);text-decoration:none;font-size:14px;font-weight:700}.sidebar-links a:before{content:"→";color:var(--light-purple);margin-right:7px}
+    .related-section{background:var(--cream);padding:82px 64px}.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}.related-card{background:#fff;border:1px solid var(--cream-border);border-radius:28px;padding:28px;box-shadow:var(--shadow)}.related-card p{color:var(--muted);font-size:15px;margin-bottom:22px}
+    .final-cta{background:radial-gradient(circle at 80% 20%,rgba(143,107,200,.42),transparent 30%),linear-gradient(135deg,var(--purple),#2f214a);color:#fff;text-align:center;padding:84px 64px}.final-cta h2{color:#fff;margin-bottom:22px}.final-cta p{color:#eee7f8;font-size:20px;margin:0 auto 32px;max-width:850px}
+    @media(max-width:980px){.top-nav,.hero,.takeaways,.page,.related-section,.final-cta{padding-left:24px;padding-right:24px}.hero-grid,.content-layout,.takeaway-grid,.component-grid,.impact-grid,.related-grid{grid-template-columns:1fr}.hero-visual{min-height:380px;margin-top:30px}.rings{right:-180px;top:-30px;width:580px;height:580px}.hero-photo{right:0;left:0;top:70px;width:100%;height:255px}.hero-accent{right:8px;top:40px;width:68px;height:68px}.hero-accent:after{inset:21px}.sidebar{position:static}h1{font-size:46px}h2{font-size:40px}.nav-links{display:none}}
+  </style>
+</head>
+
+<body>
+  <nav class="top-nav">
+    <img class="logo-img" src="ISHI Logo.svg" alt="ISHI logo">
+    <div class="nav-links">
+      <a href="#">For Patients</a><a href="#">For Clinical Partners</a><a class="active" href="/resources">Resource Center</a><a href="#">About ISHI</a><a href="#">Log In</a><a class="nav-cta" href="#">Contact Us</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="inner hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">Clinical Evidence Brief</div>
+        <h1>Transforming Heart Failure Care Through Active Clinical Management Between Visits</h1>
+        <p>Heart failure care is not limited by available therapies. It is limited by the consistent execution of those therapies outside the clinic.</p>
+        <div class="buttons">
+          <a class="btn btn-primary" href="#takeaways">Key Takeaways</a>
+          <a class="btn btn-outline" href="ISHI Clinical Evidence Narrative Condensed.pdf">Download PDF</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="rings"><img src="Green Circle.png" alt=""></div>
+        <div class="hero-photo"><img src="Nurse and Patient.png" alt=""></div>
+        <div class="hero-accent"></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="takeaways" id="takeaways">
+    <div class="inner">
+      <div class="label">Key Takeaways</div>
+      <h2>The execution gap in heart failure care</h2>
+      <div class="takeaway-grid">
+        <article class="takeaway">
+          <h3>The Clinical Problem</h3>
+          <p>The challenge is not knowing what to do. It is consistently doing it between visits.</p>
+        </article>
+        <article class="takeaway">
+          <h3>Why Existing Models Fall Short</h3>
+          <p>Visibility alone does not guarantee execution. Data must be paired with timely clinical action.</p>
+        </article>
+        <article class="takeaway">
+          <h3>The Missing Layer</h3>
+          <p>What is needed is a model that ensures care is actively delivered between visits.</p>
+        </article>
+        <article class="takeaway">
+          <h3>The ISHI Model</h3>
+          <p>ISHI combines cardiologist oversight, multidisciplinary teams, structured workflows, and enabling technology.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <main class="page">
+    <div class="inner content-layout">
+      <article class="article-body">
+        <p class="intro-paragraph">Patients leave the clinic with a plan, but that plan is not reliably carried out between visits.</p>
+        <p>Medication titration is delayed, changes in condition go unaddressed, and care remains episodic rather than proactive.</p>
+        <p>ISHI helps close this gap through a cardiologist-led virtual heart failure care model that extends clinical management beyond the visit.</p>
+
+        <h2 id="clinical-problem">The Clinical Problem</h2>
+        <p>Heart failure patients require consistent monitoring, medication adjustment, and support between visits to remain stable.</p>
+        <p>Yet cardiology practices face real operational constraints: limited access to specialized heart failure clinicians, care teams already operating at capacity, and significant barriers to building dedicated heart failure programs.</p>
+        <div class="quote-box">The challenge is not knowing what to do. It is consistently doing it between visits.</div>
+
+        <h2 id="current-models">Why Existing Models Fall Short</h2>
+        <p>Remote patient monitoring, telehealth, and care management programs improve visibility and communication, but they do not fully solve the execution problem.</p>
+        <p>Data is collected, but not always acted on. Telehealth expands access, but remains episodic. Internal care teams are still responsible for managing growing populations of complex patients.</p>
+        <div class="quote-box">Most solutions make care visible. Few ensure that care is delivered.</div>
+
+        <div class="emphasis-box" id="missing-layer">
+          <h3>The Missing Layer</h3>
+          <p>What is needed is not more data or access alone. What is needed is a care delivery model that ensures patients are actively managed between visits, treatment plans are consistently executed, and cardiologists remain informed and in control of care decisions.</p>
+        </div>
+
+        <h2 id="ishi-model">The ISHI Care Model</h2>
+        <p>ISHI operates as an extension of the cardiology practice.</p>
+        <p>The model combines cardiologist-led oversight, a multidisciplinary clinical team, structured workflows, and enabling technology to support active heart failure management between visits.</p>
+
+        <div class="component-grid">
+          <div class="component-card"><div class="mini-label">Care Team</div><h3>Multidisciplinary Clinical Team</h3><p>Heart failure clinicians, nurse practitioners, nurses, care navigators, and pharmacists support ongoing patient management, escalation, and therapy optimization.</p></div>
+          <div class="component-card"><div class="mini-label">Workflows</div><h3>Structured Clinical Workflows</h3><p>Guideline-aligned workflows support medication titration, risk identification, escalation, care coordination, and follow-up.</p></div>
+          <div class="component-card"><div class="mini-label">Engagement</div><h3>Continuous Monitoring and Engagement</h3><p>Patients are supported through symptom tracking, device monitoring, and structured check-ins to identify changes earlier.</p></div>
+          <div class="component-card"><div class="mini-label">Technology</div><h3>Enabling Technology</h3><p>Technology supports data aggregation, clinical insights, and care coordination, with AI-enabled components embedded within clinical workflows.</p></div>
+        </div>
+
+        <h2 id="how-it-works">How ISHI Operates in Practice</h2>
+        <p>Patients are identified and enrolled through the cardiology practice.</p>
+        <p>ISHI manages ongoing monitoring, check-ins, and clinical workflows between visits. Changes in condition are identified through structured processes, and interventions are coordinated with the primary cardiologist.</p>
+        <p>This allows cardiologists to maintain oversight while reducing the operational burden required to manage complex heart failure populations longitudinally.</p>
+
+        <h2 id="impact">Clinical and Operational Impact</h2>
+        <p>Early results from the ISHI model demonstrate measurable improvements in clinical indicators, patient engagement, and operational efficiency.</p>
+
+        <div class="impact-grid">
+          <article class="impact-card">
+            <h3>Clinical Indicators</h3>
+            <ul>
+              <li>Reduction in cardiac pressure trends over time</li>
+              <li>Increasing percentage of patients within target ranges</li>
+              <li>Improved alignment with guideline-directed medical therapy</li>
+            </ul>
+          </article>
+          <article class="impact-card">
+            <h3>Patient Engagement</h3>
+            <ul>
+              <li>87% of patients remain engaged beyond six months</li>
+              <li>Patients contribute an average of seven readings per week</li>
+              <li>Ongoing communication supports adherence to care plans</li>
+            </ul>
+          </article>
+          <article class="impact-card">
+            <h3>Operational Impact</h3>
+            <ul>
+              <li>Offloads routine monitoring and coordination</li>
+              <li>Enables proactive patient management</li>
+              <li>Expands capacity for complex populations</li>
+              <li>Supports additional revenue through virtual care programs</li>
+            </ul>
+          </article>
+        </div>
+
+        <h2 id="implications">Implications for Care Delivery</h2>
+        <p>The ISHI model shifts heart failure care from episodic intervention to structured management between visits.</p>
+        <p>Traditional care models are constrained by time, staffing, and reliance on in-person encounters. ISHI embeds execution into the care model, helping ensure clinical plans are actively carried out and adjusted over time.</p>
+        <p>This enables more predictable patient trajectories, reduced variability in care delivery, better alignment with value-based care models, and more efficient resource utilization.</p>
+
+        <h2 id="conclusion">Conclusion</h2>
+        <p>Heart failure care does not require new therapies. It requires a more effective model for delivering the therapies that already exist.</p>
+        <p>By combining clinical expertise, structured workflows, and enabling technology, ISHI helps ensure care plans are consistently executed between visits while preserving physician oversight and reducing operational burden.</p>
+
+        <div class="article-cta">
+          <h3>Explore the Heart Failure Case Study</h3>
+          <p>See how ISHI supported 747 heart failure patients through structured, protocol-driven care delivery between visits.</p>
+          <a class="btn btn-white" href="/resources/evidence/case-studies/executing-heart-failure-care-between-visits">Read Case Study</a>
+        </div>
+      </article>
+
+      <aside class="sidebar">
+        <div class="sidebar-card">
+          <div class="label">Evidence Brief</div>
+          <h3>Transforming Heart Failure Care</h3>
+          <p>A clinical evidence brief on active management between visits and the ISHI model.</p>
+          <a class="btn btn-outline" href="ISHI Clinical Evidence Narrative Condensed.pdf">Download PDF</a>
+        </div>
+
+        <div class="sidebar-card white">
+          <h3>In This Brief</h3>
+          <ul class="sidebar-links">
+            <li><a href="#clinical-problem">The Clinical Problem</a></li>
+            <li><a href="#current-models">Why Existing Models Fall Short</a></li>
+            <li><a href="#missing-layer">The Missing Layer</a></li>
+            <li><a href="#ishi-model">The ISHI Care Model</a></li>
+            <li><a href="#impact">Clinical and Operational Impact</a></li>
+            <li><a href="#conclusion">Conclusion</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card white">
+          <h3>Related Resources</h3>
+          <ul class="sidebar-links">
+            <li><a href="/resources/asm/what-is-asm">What Is ASM?</a></li>
+            <li><a href="/resources/evidence/case-studies/executing-heart-failure-care-between-visits">Heart Failure Case Study</a></li>
+            <li><a href="/resources/asm">ASM Resource Center</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <section class="related-section">
+    <div class="inner">
+      <div class="label">Related Resources</div>
+      <h2>Continue Exploring Clinical Evidence</h2>
+      <div class="related-grid">
+        <article class="related-card"><div class="mini-label">ASM Resource Center</div><h3>Specialty Care Was Never Designed for What Happens Between Visits</h3><p>Learn how the Ambulatory Specialty Model helps execute care plans consistently between visits.</p><a class="btn btn-outline" href="/resources/asm/what-is-asm">Read Article</a></article>
+        <article class="related-card"><div class="mini-label">Clinical Case Study</div><h3>Executing Heart Failure Care Between Visits</h3><p>See how ISHI supported heart failure patients through protocol-driven care delivery between visits.</p><a class="btn btn-outline" href="/resources/evidence/case-studies/executing-heart-failure-care-between-visits">Read Case Study</a></article>
+        <article class="related-card"><div class="mini-label">Clinical Evidence</div><h3>Explore More Clinical Evidence</h3><p>Review additional evidence, outcomes, and resources supporting active management between visits.</p><a class="btn btn-outline" href="/resources/evidence">Explore Evidence</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="inner">
+      <h2>Ready to Extend Heart Failure Care Between Visits?</h2>
+      <p>Learn how ISHI helps cardiovascular practices deliver more consistent, proactive care for complex patients.</p>
+      <a class="btn btn-white" href="/contact">Contact ISHI</a>
+    </div>
+  </section>
+</body>
+</html>
