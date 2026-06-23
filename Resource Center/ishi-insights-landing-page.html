@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insights | ISHI Resource Center</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{--purple:#3b275c;--deep-purple:#2b1b46;--light-purple:#9d6ad6;--cream:#fbf8f3;--teal:#23887f;--navy:#101d38;--text:#1e1e24;--muted:#6f6b78;--border:#e4deec;--cream-border:#eee4dc;--shadow:0 18px 48px rgba(60,40,90,.08)}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:"Poppins",Arial,sans-serif;color:var(--text);background:#fff;line-height:1.6} a{cursor:pointer}
+    .top-nav{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 64px;background:var(--cream);border-bottom:1px solid #e7e0d8;position:sticky;top:0;z-index:50;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+    .logo-img{height:54px;width:auto;display:block}.nav-links{display:flex;gap:28px;align-items:center;font-size:15px;font-weight:500}.nav-links a{text-decoration:none;color:#2c2434}.nav-links a.active{color:#7b4fc4;font-weight:800}.nav-cta{background:#7b52b3;color:white!important;padding:13px 24px;border-radius:999px;font-weight:700}
+    .inner{max-width:1180px;margin:0 auto}.eyebrow,.label,.mini-label{text-transform:uppercase;letter-spacing:.12em;font-size:13px;font-weight:800;color:var(--light-purple)}
+    h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:58px;line-height:1.05;margin:0 0 24px;letter-spacing:-1px;font-weight:600;color:var(--deep-purple)}
+    h2{font-family:"Cormorant Garamond",Georgia,serif;font-size:52px;line-height:1.04;margin:0 0 20px;color:var(--text);font-weight:600}
+    h3{margin:0 0 10px;font-size:23px;line-height:1.22;color:var(--purple);font-weight:800} p{margin:0}
+    .lead{font-size:20px;color:var(--muted);max-width:900px}
+    .btn{padding:14px 24px;border-radius:999px;font-weight:700;text-decoration:none;display:inline-block;font-size:15px;transition:transform .18s ease}.btn:hover{transform:translateY(-1px)}.btn-primary{background:var(--purple);color:#fff}.btn-white{background:#fff;color:var(--purple)}.btn-outline{border:1px solid var(--border);color:var(--purple);background:#fff}
+    .hero{background:var(--cream);padding:90px 64px 76px;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:74px;align-items:center}.hero .eyebrow{margin-bottom:18px}.hero-copy p{font-size:20px;line-height:1.5;color:#40384a;max-width:720px;margin:0 0 34px}.buttons{display:flex;gap:16px;flex-wrap:wrap}
+    .hero-visual{position:relative;min-height:470px}.rings{position:absolute;right:-190px;top:-32px;width:760px;height:760px;z-index:1;opacity:.95;pointer-events:none}.rings img{width:100%;height:100%;object-fit:contain;display:block}
+    .hero-card{position:absolute;right:38px;top:82px;z-index:2;width:510px;border-radius:34px;background:#fff;padding:34px;box-shadow:0 28px 70px rgba(60,40,90,.16);border:1px solid rgba(255,255,255,.8)}
+    .hero-card h3{font-size:30px;margin-bottom:14px}.hero-card p{color:var(--muted);font-size:16px;line-height:1.55;margin-bottom:22px}
+    .hero-accent{position:absolute;right:6px;top:64px;width:84px;height:84px;border-radius:50%;background:var(--teal);z-index:3;box-shadow:0 18px 44px rgba(35,136,127,.25)}.hero-accent:after{content:"";position:absolute;inset:26px;border:3px solid rgba(255,255,255,.86);border-radius:50%}
+    .section{padding:82px 64px}.featured{background:#fff}.featured-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:32px;align-items:stretch;margin-top:42px}
+    .featured-card{background:radial-gradient(circle at 88% 12%,rgba(143,107,200,.20),transparent 32%),linear-gradient(135deg,var(--deep-purple),#4d3473);color:#fff;border-radius:34px;padding:38px;display:flex;flex-direction:column;justify-content:space-between;min-height:430px;box-shadow:0 24px 70px rgba(60,40,90,.16)}
+    .featured-card h3{color:#fff;font-size:38px;margin-bottom:18px}.featured-card p{color:#eee7f8;font-size:17px;margin-bottom:28px}.featured-card .mini-label{color:#b784eb;margin-bottom:18px}
+    .featured-side{display:grid;gap:18px}.side-card{background:var(--cream);border:1px solid var(--cream-border);border-radius:26px;padding:26px;box-shadow:var(--shadow)}.side-card p{color:var(--muted);font-size:15px}
+    .topics{background:var(--cream)}.topic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}.topic-card{background:#fff;border:1px solid var(--cream-border);border-radius:28px;padding:28px;box-shadow:var(--shadow);min-height:220px}.topic-card p{color:var(--muted);font-size:15px}
+    .latest{background:#fff}.latest-grid{display:grid;grid-template-columns:1.2fr .9fr .9fr;gap:24px;margin-top:42px}.article-card{background:#fff;border:1px solid var(--border);border-radius:28px;padding:30px;box-shadow:var(--shadow);display:flex;flex-direction:column;min-height:310px}.article-card.featured-article{background:var(--navy);border-color:rgba(255,255,255,.14);color:#fff}.article-card.featured-article h3{color:#fff}.article-card.featured-article p{color:#dbe3f2}.article-card p{color:var(--muted);font-size:15px;margin-bottom:26px}.article-card .actions{margin-top:auto}.coming-soon{background:#faf7fc;border:1px dashed #d8cae8}.coming-soon h3{color:#7b678f}.coming-soon p{color:#837b8c}
+    .resource-path{background:var(--cream);padding:82px 64px}.path-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}.path-card{background:#fff;border:1px solid var(--cream-border);border-radius:28px;padding:28px;box-shadow:var(--shadow)}.path-card p{color:var(--muted);font-size:15px;margin-bottom:22px}
+    .final-cta{background:radial-gradient(circle at 80% 20%,rgba(143,107,200,.42),transparent 30%),linear-gradient(135deg,var(--purple),#2f214a);color:#fff;text-align:center;padding:84px 64px}.final-cta h2{color:#fff;margin-bottom:22px}.final-cta p{color:#eee7f8;font-size:20px;margin:0 auto 32px;max-width:850px}
+    @media(max-width:980px){.top-nav,.hero,.section,.resource-path,.final-cta{padding-left:24px;padding-right:24px}.hero-grid,.featured-grid,.topic-grid,.latest-grid,.path-grid{grid-template-columns:1fr}.hero-visual{min-height:430px;margin-top:30px}.rings{right:-180px;top:-30px;width:580px;height:580px}.hero-card{right:0;left:0;top:70px;width:100%}.hero-accent{right:8px;top:40px;width:68px;height:68px}.hero-accent:after{inset:21px}h1{font-size:42px;line-height:1.08}h2{font-size:40px}.nav-links{display:none}}
+  </style>
+</head>
+
+<body>
+  <nav class="top-nav">
+    <img class="logo-img" src="ISHI Logo.svg" alt="ISHI logo">
+    <div class="nav-links">
+      <a href="#">For Patients</a><a href="#">For Clinical Partners</a><a class="active" href="/resources">Resource Center</a><a href="#">About ISHI</a><a href="#">Log In</a><a class="nav-cta" href="#">Contact Us</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="inner hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">Insights</div>
+        <h1>Perspectives on the Future of Specialty Care</h1>
+        <p>Explore emerging trends, care delivery models, and practical insights shaping how specialty care is delivered between visits.</p>
+        <div class="buttons">
+          <a class="btn btn-primary" href="#latest">Latest Insights</a>
+          <a class="btn btn-outline" href="/resources/asm/what-is-asm">Explore ASM</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="rings"><img src="Green Circle.png" alt=""></div>
+        <div class="hero-card">
+          <div class="mini-label">Resource Center</div>
+          <h3>Care delivery is evolving beyond episodic encounters.</h3>
+          <p>Specialty practices need new ways to support patients, execute care plans, and manage complexity between visits.</p>
+        </div>
+        <div class="hero-accent"></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section featured">
+    <div class="inner">
+      <div class="label">Featured Insight</div>
+      <h2>Start with the execution gap</h2>
+      <p class="lead">The first Insights article explores a central challenge across modern cardiovascular care: therapies only improve outcomes when patients can access them, start them, and stay on them.</p>
+
+      <div class="featured-grid">
+        <article class="featured-card">
+          <div>
+            <div class="mini-label">Specialty Care Innovation</div>
+            <h3>The Prescription Was Written. Why Didn't the Patient Start Therapy?</h3>
+            <p>Modern cardiology has no shortage of therapies, procedures, guidelines, or evidence. The challenge is execution. Patients never start therapy, never reach target dose, or fall through the cracks between visits.</p>
+          </div>
+          <div>
+            <a class="btn btn-white" href="/resources/insights/the-prescription-was-written">Read Article</a>
+          </div>
+        </article>
+
+        <div class="featured-side">
+          <div class="side-card">
+            <div class="mini-label">Core Theme</div>
+            <h3>Clinical intent is not the same as clinical execution.</h3>
+            <p>New therapies only matter if care teams can help patients access treatment, follow through, and remain engaged over time.</p>
+          </div>
+          <div class="side-card">
+            <div class="mini-label">Why It Matters</div>
+            <h3>The opportunity lives between visits.</h3>
+            <p>As cardiovascular care becomes more sophisticated, the need for structured execution between encounters becomes more important.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section topics">
+    <div class="inner">
+      <div class="label">Topics We Cover</div>
+      <h2>Explore specialty care from multiple angles</h2>
+      <p class="lead">ISHI Insights is designed to support practical, forward-looking conversations about ambulatory specialty care, cardiovascular innovation, and scalable care delivery.</p>
+
+      <div class="topic-grid">
+        <article class="topic-card">
+          <div class="mini-label">Topic</div>
+          <h3>Ambulatory Specialty Model</h3>
+          <p>Care delivery models designed to extend specialty care beyond traditional office visits.</p>
+        </article>
+        <article class="topic-card">
+          <div class="mini-label">Topic</div>
+          <h3>Cardiovascular Care Delivery</h3>
+          <p>Perspectives on managing complex cardiovascular populations more effectively.</p>
+        </article>
+        <article class="topic-card">
+          <div class="mini-label">Topic</div>
+          <h3>Specialty Care Innovation</h3>
+          <p>Emerging approaches to improving specialty care access, scalability, and outcomes.</p>
+        </article>
+        <article class="topic-card">
+          <div class="mini-label">Topic</div>
+          <h3>Rural Health</h3>
+          <p>Addressing specialty care challenges in underserved and geographically dispersed populations.</p>
+        </article>
+        <article class="topic-card">
+          <div class="mini-label">Topic</div>
+          <h3>Virtual Care Operations</h3>
+          <p>Operational frameworks that support reliable care delivery between visits.</p>
+        </article>
+        <article class="topic-card">
+          <div class="mini-label">Topic</div>
+          <h3>Care Team Design</h3>
+          <p>The evolving role of multidisciplinary teams in modern specialty care.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section latest" id="latest">
+    <div class="inner">
+      <div class="label">Latest Insights</div>
+      <h2>Recent perspectives from ISHI</h2>
+      <p class="lead">A growing library of thought leadership on the clinical, operational, and strategic shifts reshaping specialty care delivery.</p>
+
+      <div class="latest-grid">
+        <article class="article-card featured-article">
+          <div class="mini-label">Specialty Care Innovation</div>
+          <h3>The Prescription Was Written. Why Didn't the Patient Start Therapy?</h3>
+          <p>The gap between clinical intent and clinical reality remains one of the largest opportunities in cardiovascular care.</p>
+          <div class="actions">
+            <a class="btn btn-white" href="/resources/insights/the-prescription-was-written">Read Article</a>
+          </div>
+        </article>
+
+        <article class="article-card coming-soon">
+          <div class="mini-label">Coming Soon</div>
+          <h3>Future Perspectives on Cardiovascular Care Delivery</h3>
+          <p>Upcoming insights will explore care coordination, therapy optimization, and models for managing complex cardiovascular populations.</p>
+          <div class="actions">
+            <a class="btn btn-outline" href="/resources">Explore Resource Center</a>
+          </div>
+        </article>
+
+        <article class="article-card coming-soon">
+          <div class="mini-label">Coming Soon</div>
+          <h3>Future Perspectives on Specialty Care Innovation</h3>
+          <p>Upcoming articles will examine how specialty practices can scale access, improve outcomes, and support patients between visits.</p>
+          <div class="actions">
+            <a class="btn btn-outline" href="/resources/asm/what-is-asm">What Is ASM?</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="resource-path">
+    <div class="inner">
+      <div class="label">Explore More Resources</div>
+      <h2>Continue through the Resource Center</h2>
+      <p class="lead">Insights are one part of the broader ISHI Resource Center. Explore the clinical evidence and foundational ASM resources that support this emerging model of specialty care.</p>
+
+      <div class="path-grid">
+        <article class="path-card">
+          <div class="mini-label">ASM Resource Center</div>
+          <h3>What Is ASM?</h3>
+          <p>Learn how the Ambulatory Specialty Model helps specialty practices execute care plans consistently between visits.</p>
+          <a class="btn btn-outline" href="/resources/asm/what-is-asm">Read Article</a>
+        </article>
+
+        <article class="path-card">
+          <div class="mini-label">Clinical Evidence</div>
+          <h3>Clinical Evidence Brief</h3>
+          <p>Explore the clinical rationale behind active heart failure management between visits.</p>
+          <a class="btn btn-outline" href="/resources/evidence/clinical-evidence-brief">Read Evidence Brief</a>
+        </article>
+
+        <article class="path-card">
+          <div class="mini-label">Case Study</div>
+          <h3>Executing Heart Failure Care Between Visits</h3>
+          <p>See how ISHI supported heart failure patients through protocol-driven care delivery between visits.</p>
+          <a class="btn btn-outline" href="/resources/evidence/case-studies/executing-heart-failure-care-between-visits">Read Case Study</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="inner">
+      <h2>Explore the Ambulatory Specialty Model</h2>
+      <p>Learn how ISHI helps specialty practices close the gap between clinical intent and care execution between visits.</p>
+      <a class="btn btn-white" href="/resources/asm/what-is-asm">What Is ASM?</a>
+    </div>
+  </section>
+</body>
+</html>
