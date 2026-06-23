@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ISHI Resource Center</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --purple: #3b275c;
+      --deep-purple: #2b1b46;
+      --light-purple: #9d6ad6;
+      --cream: #fbf8f3;
+      --teal: #23887f;
+      --teal-light: #72c7c3;
+      --navy: #101d38;
+      --text: #1e1e24;
+      --muted: #6f6b78;
+      --border: #e4deec;
+      --cream-border: #eee4dc;
+      --shadow: 0 18px 48px rgba(60, 40, 90, 0.08);
+      --nav-height: 76px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", Arial, sans-serif;
+      color: var(--text);
+      background: white;
+      line-height: 1.5;
+    }
+
+    a {
+      cursor: pointer;
+    }
+
+    .top-nav {
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 64px;
+      background: var(--cream);
+      border-bottom: 1px solid #e7e0d8;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .logo-img {
+      height: 54px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #2c2434;
+    }
+
+    .nav-links a.active {
+      color: #7b4fc4;
+      font-weight: 800;
+    }
+
+    .nav-cta {
+      background: #7b52b3;
+      color: white !important;
+      padding: 13px 24px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .inner {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .eyebrow,
+    .label,
+    .card-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--light-purple);
+    }
+
+    h1 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 76px;
+      line-height: 0.98;
+      margin: 0 0 24px;
+      letter-spacing: -1px;
+      font-weight: 600;
+      color: var(--deep-purple);
+    }
+
+    h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 54px;
+      line-height: 1.02;
+      margin: 0 0 18px;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    h3 {
+      margin: 0 0 12px;
+      font-size: 26px;
+      line-height: 1.18;
+      color: var(--purple);
+      font-weight: 800;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .lead {
+      font-size: 20px;
+      color: var(--muted);
+      max-width: 900px;
+      margin: 0;
+    }
+
+    .btn {
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 15px;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--purple);
+      color: white;
+    }
+
+    .btn-white {
+      background: white;
+      color: var(--purple);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--purple);
+      background: white;
+    }
+
+    .hero {
+      background: var(--cream);
+      padding: 96px 64px 88px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.95fr;
+      gap: 74px;
+      align-items: center;
+    }
+
+    .hero .eyebrow {
+      margin-bottom: 18px;
+    }
+
+    .hero-copy p {
+      font-size: 21px;
+      line-height: 1.5;
+      color: #40384a;
+      max-width: 680px;
+      margin: 0 0 34px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 430px;
+    }
+
+    .rings {
+      position: absolute;
+      right: -10px;
+      top: 18px;
+      width: 520px;
+      height: 430px;
+      border-radius: 50%;
+      background: repeating-radial-gradient(circle at 52% 52%, transparent 0 30px, rgba(47,145,137,0.50) 31px 34px);
+      opacity: 0.95;
+      z-index: 1;
+    }
+
+    .hero-photo {
+      position: absolute;
+      right: 12px;
+      top: 70px;
+      z-index: 2;
+      width: 540px;
+      height: 305px;
+      border-radius: 34px;
+      overflow: hidden;
+      box-shadow: 0 28px 70px rgba(60,40,90,0.16);
+      border: 1px solid rgba(255,255,255,0.7);
+      background: white;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .section {
+      padding: 82px 64px;
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 24px;
+      margin-top: 44px;
+      align-items: stretch;
+    }
+
+    .primary-resource {
+      background:
+        radial-gradient(circle at 88% 12%, rgba(143,107,200,0.22), transparent 32%),
+        linear-gradient(135deg, var(--deep-purple), #4d3473);
+      border-radius: 34px;
+      padding: 38px;
+      color: white;
+      min-height: 430px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 24px 70px rgba(60,40,90,0.18);
+    }
+
+    .primary-resource .card-eyebrow {
+      color: #b784eb;
+      margin-bottom: 22px;
+    }
+
+    .primary-resource h3 {
+      color: white;
+      font-size: 38px;
+      max-width: 680px;
+      margin-bottom: 22px;
+    }
+
+    .primary-resource p {
+      color: #eee7f8;
+      font-size: 17px;
+      max-width: 720px;
+      margin: 0 0 24px;
+    }
+
+    .resource-stack {
+      display: grid;
+      gap: 24px;
+    }
+
+    .resource-card {
+      border: 1px solid var(--border);
+      background: white;
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .resource-card .card-eyebrow {
+      margin-bottom: 20px;
+    }
+
+    .resource-card p {
+      color: var(--muted);
+      margin: 0 0 22px;
+      font-size: 15px;
+    }
+
+    .category-section {
+      background: var(--cream);
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 42px;
+    }
+
+    .category-card {
+      background: white;
+      border: 1px solid var(--cream-border);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      min-height: 430px;
+    }
+
+    .category-card .card-eyebrow {
+      margin-bottom: 20px;
+    }
+
+    .category-card p {
+      color: var(--muted);
+      margin: 0 0 22px;
+      font-size: 15px;
+    }
+
+    .resource-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 26px;
+      display: grid;
+      gap: 11px;
+    }
+
+    .resource-list li {
+      color: var(--muted);
+      font-size: 14px;
+      display: flex;
+      gap: 9px;
+      align-items: flex-start;
+    }
+
+    .resource-list li::before {
+      content: "→";
+      color: var(--light-purple);
+      font-weight: 800;
+      flex: 0 0 auto;
+    }
+    .resource-count {
+      margin: 20px 0 28px;
+      padding: 18px 20px;
+      background: #faf7fc;
+      border: 1px solid #ece5f4;
+      border-radius: 16px;
+      color: #5b5565;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .resource-count strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--purple);
+      font-size: 15px;
+    }
+    .coming-soon {
+      color: #9f99aa;
+      font-size: 12px;
+      font-weight: 700;
+      margin-left: 4px;
+    }
+
+    .actions {
+      margin-top: auto;
+    }
+
+    .evidence-band {
+      background: var(--navy);
+      color: white;
+    }
+
+    .evidence-band h2 {
+      color: white;
+    }
+
+    .evidence-band .lead {
+      color: #dbe3f2;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 42px;
+    }
+
+    .metric {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 24px;
+      padding: 26px;
+      min-height: 145px;
+    }
+
+    .metric strong {
+      display: block;
+      color: white;
+      font-size: 40px;
+      line-height: 1;
+      margin-bottom: 14px;
+      font-weight: 800;
+    }
+
+    .metric span {
+      display: block;
+      color: #dbe3f2;
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .insights {
+      background: white;
+    }
+
+    .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 36px;
+    }
+
+    .topic {
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 22px;
+      color: var(--purple);
+      font-weight: 800;
+      background: white;
+      box-shadow: 0 10px 28px rgba(60,40,90,0.04);
+    }
+
+    .topic span {
+      display: block;
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 1.45;
+      margin-top: 8px;
+    }
+
+    .final-cta {
+      background:
+        radial-gradient(circle at 80% 20%, rgba(143,107,200,0.42), transparent 30%),
+        linear-gradient(135deg, var(--purple), #2f214a);
+      color: white;
+      text-align: center;
+      padding: 84px 64px;
+    }
+
+    .final-cta h2 {
+      color: white;
+      margin-bottom: 22px;
+    }
+
+    .final-cta .lead {
+      color: #eee7f8;
+      margin: 0 auto 32px;
+      max-width: 880px;
+    }
+
+    @media(max-width: 980px) {
+      .top-nav,
+      .hero,
+      .section,
+      .final-cta {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
+      .hero-grid,
+      .featured-grid,
+      .category-grid,
+      .metrics-grid,
+      .topic-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        min-height: 380px;
+        margin-top: 30px;
+      }
+
+      .rings {
+        right: -80px;
+        top: 0;
+        width: 460px;
+        height: 360px;
+      }
+
+      .hero-photo {
+        right: 0;
+        left: 0;
+        top: 55px;
+        width: 100%;
+        height: 255px;
+      }
+
+      h1 {
+        font-size: 52px;
+      }
+
+      h2 {
+        font-size: 40px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="top-nav">
+    <img class="logo-img" src="ISHI Logo.svg" alt="ISHI logo">
+    <div class="nav-links">
+      <a href="#">For Patients</a>
+      <a href="#">For Clinical Partners</a>
+      <a class="active" href="/resources">Resource Center</a>
+      <a href="#">About ISHI</a>
+      <a href="#">Log In</a>
+      <a class="nav-cta" href="#">Contact Us</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="inner hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">Resource Center</div>
+        <h1>Evidence, Education & Insights</h1>
+        <p>Evidence, education, and practical tools to improve specialty care between visits.</p>
+        <div class="buttons">
+          <a class="btn btn-primary" href="/resources/asm">Explore ASM</a>
+          <a class="btn btn-outline" href="/resources/evidence">View Clinical Evidence</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="rings"></div>
+        <div class="hero-photo">
+          <img src="Nurse and Patient.png" alt="">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section featured">
+    <div class="inner">
+      <div class="label">Featured Resources</div>
+      <h2>Start with the Core Resources</h2>
+      <p class="lead">Begin with the foundational ASM article, clinical evidence narrative, and heart failure case study. Together, these resources explain the problem, the model, and the outcomes.</p>
+
+      <div class="featured-grid">
+        <article class="primary-resource">
+          <div>
+            <div class="card-eyebrow">Ambulatory Specialty Model</div>
+            <h3>Specialty Care Was Never Designed for What Happens Between Visits</h3>
+            <p>Traditional specialty care was built around episodic visits, leaving significant gaps in patient management between appointments. Learn how the Ambulatory Specialty Model creates a more consistent, scalable approach to managing complex patient populations.</p>
+          </div>
+          <div>
+            <a class="btn btn-white" href="/resources/asm/what-is-asm">Read Article</a>
+          </div>
+        </article>
+
+        <div class="resource-stack">
+          <article class="resource-card">
+            <div class="card-eyebrow">Clinical Evidence Narrative</div>
+            <h3>Transforming Heart Failure Care Through Active Clinical Management Between Visits</h3>
+            <p>Explore the clinical rationale behind the ISHI model and how structured care delivery supports adherence, scalability, and patient stability outside the clinic.</p>
+            <a class="btn btn-outline" href="/resources/evidence/clinical-evidence-narrative">Read Narrative</a>
+          </article>
+
+          <article class="resource-card">
+            <div class="card-eyebrow">Clinical Case Study</div>
+            <h3>Executing Heart Failure Care Between Visits</h3>
+            <p>See how ISHI supported 747 heart failure patients, managed more than 2,000 clinical alerts, and improved therapy optimization without increasing physician workload.</p>
+            <a class="btn btn-outline" href="/resources/evidence/case-studies/executing-heart-failure-care-between-visits">Read Case Study</a>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section category-section">
+    <div class="inner">
+      <div class="label">Browse by Topic</div>
+      <h2>Explore the Resource Center</h2>
+      <p class="lead">Whether you're exploring a new care model, reviewing clinical outcomes, or looking for practical implementation guidance, the Resource Center is organized around three areas.</p>
+
+      <div class="category-grid">
+        <article class="category-card">
+          <div class="card-eyebrow">Core Education</div>
+          <h3>ASM Resource Center</h3>
+          <p>Educational resources designed to help healthcare organizations understand, evaluate, and implement the Ambulatory Specialty Model.</p>
+
+          <div class="resource-count">
+            <strong>2 Resources Available</strong><br>
+            What Is ASM?<br>
+            ASM FAQ
+          </div>
+          <div class="actions">
+            <a class="btn btn-outline" href="/resources/asm">Explore ASM Resources</a>
+          </div>
+        </article>
+
+        <article class="category-card">
+          <div class="card-eyebrow">Proof & Outcomes</div>
+          <h3>Evidence & Outcomes</h3>
+          <p>Clinical evidence, case studies, and operational results demonstrating the impact of the ISHI model.</p>
+
+          <div class="resource-count">
+            <strong>2 Resources Available</strong><br>
+            Clinical Evidence Narrative<br>
+            Heart Failure Case Study
+          </div>
+          <div class="actions">
+            <a class="btn btn-outline" href="/resources/evidence">Explore Evidence</a>
+          </div>
+        </article>
+
+        <article class="category-card">
+          <div class="card-eyebrow">Thought Leadership</div>
+          <h3>Insights</h3>
+          <p>Perspectives on ambulatory specialty care, cardiovascular innovation, and the future of care delivery between visits.</p>
+
+          <div class="resource-count">
+            <strong>3 Topic Areas</strong><br>
+            Ambulatory Specialty Model<br>
+            Cardiovascular Care Delivery<br>
+            Specialty Care Innovation
+          </div>
+          <div class="actions">
+            <a class="btn btn-outline" href="/resources/insights">Explore Insights</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section evidence-band">
+    <div class="inner">
+      <div class="label">Evidence & Outcomes</div>
+      <h2>Clinical proof that care can be executed between visits</h2>
+      <p class="lead">ISHI's model is designed to move care from episodic intervention to consistent execution. Early evidence demonstrates improvements in therapy optimization, patient engagement, and operational efficiency.</p>
+
+      <div class="metrics-grid">
+        <div class="metric">
+          <strong>15.5%</strong>
+          <span>Improvement in beta-blocker utilization</span>
+        </div>
+        <div class="metric">
+          <strong>99%</strong>
+          <span>Clinical alerts addressed within 48 hours</span>
+        </div>
+        <div class="metric">
+          <strong>81%</strong>
+          <span>Clinical alerts managed by nursing staff</span>
+        </div>
+        <div class="metric">
+          <strong>747</strong>
+          <span>Heart failure patients included in evaluation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="inner">
+      <h2>Ready to Explore ASM?</h2>
+      <p class="lead">Explore the resources, evidence, and implementation frameworks behind the Ambulatory Specialty Model.</p>
+      <a class="btn btn-white" href="/resources/asm/what-is-asm">Start with What Is ASM?</a>
+    </div>
+  </section>
+</body>
+</html>
